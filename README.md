@@ -1,67 +1,60 @@
 # Job Market Analysis – India (SQL Project)
 
 ## Overview
-This project explores the Indian data analyst job market using structured SQL analysis.  
-The goal is to understand hiring trends, in-demand skills, and possible reasons behind the perceived slowdown in entry-level opportunities.
+This project explores the structure of the Indian data analyst job market using SQL.
 
-Instead of jumping directly into dashboards, this project starts with building a solid data foundation — designing schemas, organizing job-related data, and writing queries to extract meaningful insights.
+The focus is not just on analysis, but on building a strong data foundation — designing a schema that can represent job listings, skills, and hiring patterns in a structured way.
+
+This is part of a larger goal: to understand why entry-level data analyst roles feel increasingly competitive and constrained.
 
 ---
 
 ## Problem Statement
-There is a growing concern that entry-level data analyst roles in India are becoming harder to secure.
+There is a noticeable gap between the number of people learning data analytics and the number of entry-level opportunities available.
 
-This project attempts to answer:
-- What skills are most frequently demanded?
-- Are companies asking for unrealistic combinations of skills?
-- Is there a pattern in experience requirements?
-- Are certain roles or locations dominating the market?
+This project attempts to explore:
+
+- Which skills are most in demand?
+- Do job postings require overlapping or unrealistic skill sets?
+- What experience levels are companies actually asking for?
+- Are certain roles or locations dominating hiring?
 
 ---
 
-## Dataset Structure
+## Data Model
 
-The database is designed to simulate real-world job listing data.
+The database is designed to simulate real-world job listing data with a focus on flexibility and scalability.
 
 ### Core Tables:
-- `job_listings` → Job role, company, location, experience, etc.
-- `job_skills` → Skills mapped to each job listing
-- `companies` (if applicable)
-- `locations` (if applicable)
+- `job_listings` → job role, company, location, experience required  
+- `job_skills` → mapping between jobs and required skills  
+- (optional) `companies`, `locations` for normalization  
 
-The schema is structured to support flexible querying and future scaling.
+### Design Considerations:
+- Normalized structure to reduce redundancy  
+- Ability to handle many-to-many relationships (jobs ↔ skills)  
+- Query efficiency using indexing  
 
----
-
-## Schema Design
-
-The schema focuses on:
-- Normalized structure for better data organization
-- Efficient querying using indexing
-- Clear relationships between jobs, skills, and companies
-
-You can view the schema here:
-👉 `schema.sql`
+Schema file:
+👉 `job_market_schema.sql`
 
 ---
 
-## Key SQL Analysis
+## SQL Analysis
 
-Some of the queries explored in this project:
+This project uses SQL to explore patterns such as:
 
-- Top in-demand skills in the job market  
-- Frequency of skills across job listings  
-- Experience level distribution  
-- Skill combinations required by employers  
+- Most in-demand skills across job listings  
+- Frequency distribution of required skills  
+- Experience requirements across roles  
+- Common skill combinations expected by employers  
 
-All queries are available in:
-👉 `queries.sql`
+Queries available in:
+👉 `analysis_queries.sql`
 
 ---
 
-## Sample Insight
-
-Example:
+## Example Exploration
 
 ```sql
 SELECT skill_name, COUNT(*) AS frequency
