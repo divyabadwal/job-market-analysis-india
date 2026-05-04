@@ -35,8 +35,7 @@ The database is designed to simulate real-world job listing data with a focus on
 - Ability to handle many-to-many relationships (jobs ↔ skills)  
 - Query efficiency using indexing  
 
-Schema file:
-👉 `job_market_schema.sql`
+Schema file: [job_market_schema.sql](./job_market_schema.sql)
 
 ---
 
@@ -49,10 +48,17 @@ This project uses SQL to explore patterns such as:
 - Experience requirements across roles  
 - Common skill combinations expected by employers  
 
-Queries available in:
-👉 `analysis_queries.sql`
+Queries available in: [analysis_queries.sql](.analysis_queries.sql)
 
 ---
+
+## How to Use
+
+1. Run the schema file to create the database:
+   - job_market_schema.sql
+
+2. Run the queries file to perform analysis:
+   - analysis_queries.sql
 
 ## Example Exploration
 
