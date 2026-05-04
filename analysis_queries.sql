@@ -44,10 +44,34 @@ SELECT
 FROM job_listings
 GROUP BY experience_category;
 
--- % of jobs requiring each skill
+-- Q5: % of jobs requiring each skill
 SELECT 
     skill_name,
     COUNT(DISTINCT job_id) * 100.0 / (SELECT COUNT(*) FROM job_listings) AS percentage
 FROM job_skills
 GROUP BY skill_name
 ORDER BY percentage DESC;
+
+-- Q6: Skills that frequently appear together
+SELECT 
+    js1.skill_name AS skill_1,
+    js2.skill_name AS skill_2,
+    COUNT(*) AS frequency
+FROM job_skills js1
+JOIN job_skills js2 
+    ON js1.job_id = js2.job_id 
+    AND js1.skill_name < js2.skill_name
+GROUP BY skill_1, skill_2
+ORDER BY frequency DESC;
+
+-- Q7: Average number of skills required per job (by experience level)
+SELECT 
+    CASE 
+        WHEN jl.experience_max <= 2 THEN 'Entry Level'
+        WHEN jl.experience_max <= 5 THEN 'Mid Level'
+        ELSE 'Senior Level'
+    END AS experience_category,
+    COUNT(js.skill_name) * 1.0 / COUNT(DISTINCT jl.job_id) AS avg_skills_per_job
+FROM job_listings jl
+JOIN job_skills js ON jl.job_id = js.job_id
+GROUP BY experience_category;
