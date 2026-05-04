@@ -43,3 +43,11 @@ SELECT
     COUNT(*) AS job_count
 FROM job_listings
 GROUP BY experience_category;
+
+-- % of jobs requiring each skill
+SELECT 
+    skill_name,
+    COUNT(DISTINCT job_id) * 100.0 / (SELECT COUNT(*) FROM job_listings) AS percentage
+FROM job_skills
+GROUP BY skill_name
+ORDER BY percentage DESC;
