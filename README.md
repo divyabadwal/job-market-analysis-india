@@ -52,6 +52,14 @@ Queries available in: [analysis_queries.sql](.analysis_queries.sql)
 
 ---
 
+## Key Insights (Initial Findings)
+
+- SQL appears in majority of job listings, making it a core requirement across all experience levels  
+- Entry-level roles (0–2 years) form a smaller portion of total listings, indicating higher competition for freshers  
+- Skills like Python and Power BI frequently co-occur, suggesting expectation of both analysis and visualization skills  
+
+---
+
 ## How to Use
 
 1. Run the schema file to create the database:
