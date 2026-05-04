@@ -60,6 +60,14 @@ Queries available in: [analysis_queries.sql](.analysis_queries.sql)
 
 ---
 
+## Limitations
+
+- Current dataset is small and manually created  
+- Results are indicative, not conclusive  
+- Real-world data integration is planned  
+
+---
+
 ## How to Use
 
 1. Run the schema file to create the database:
