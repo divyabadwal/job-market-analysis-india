@@ -55,10 +55,10 @@ Queries available in: [analysis_queries.sql](.analysis_queries.sql)
 ## How to Use
 
 1. Run the schema file to create the database:
-   - job_market_schema.sql
+   - [job_market_schema.sql](./job_market_schema.sql)
 
 2. Run the queries file to perform analysis:
-   - analysis_queries.sql
+   - [analysis_queries.sql](./analysis_queries.sql)
 
 ## Example Exploration
 
